@@ -1,13 +1,14 @@
 package com.khoubyari.example.service;
 
-import com.khoubyari.example.domain.Car;
-import com.khoubyari.example.dao.dynamodb.CarRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import com.khoubyari.example.dao.dynamodb.CarRepository;
+import com.khoubyari.example.domain.Car;
 
 /*
  * Sample service to demonstrate what the API controller would use to get things done
@@ -44,8 +45,11 @@ public class CarService {
 
     public Page<Car> getAllCars(Integer page, Integer size) {
         Page pageOfCars = carRepository.findAll(PageRequest.of(page, size));
-        loginfo("uma completed");
+        log.info("uma completed");
+        log.info("uma execute");
+
         return pageOfCars;
+
     }
 
 }
