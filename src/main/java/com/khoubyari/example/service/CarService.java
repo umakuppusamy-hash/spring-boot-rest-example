@@ -47,6 +47,7 @@ public class CarService {
         Page pageOfCars = carRepository.findAll(PageRequest.of(page, size));
         log.info("uma completed");
         log.info("uma execute");
+        log.info("Application started successfully.");
 
         return pageOfCars;
 
